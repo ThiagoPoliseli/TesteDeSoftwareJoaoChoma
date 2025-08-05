@@ -1,0 +1,32 @@
+GRUPO: 
+Thiago Poliseli Silva 
+Gabriel Felipe Alexandre Dos Santo 
+Lucas De Freitas Bovo
+
+1- Teste unitários utilizados para testar funcionalidades próxima aos códigos fontes;
+2- Teste de integração utilizados para testar a combinação de funcionalidades;
+3- Teste de ponta a ponta feitos para testar o produto final tentando todo o software;
+4- Testes de Regressão garantir que novas mudanças não afetem funcionalidades existentes;
+5- Testes Automatizados	garantir repetibilidade e confiabilidade na execução de testes;
+
+Critérios:
+- Criação de um CRUD funcional 
+- Login/Registro
+- Controle de sessão
+
+Caso de Teste (1) 
+- Login com senha errada (Usuario tentara efetuar o login com uma senha incorreta);
+
+Resultado Esperado: Login incorreto
+
+Caso de Teste (2)
+- Registro com informação incorreta(Não seguir o padrão estabelecido para o Registro do Usuário);
+
+Resultado Esperado:Registro incorreto
+
+Caso de Teste (3)	
+- Criação de um Projeto(Usuário poder efetuar a criação de um Projeto);
+
+Resultado: Projeto criado com sucesso
+
+

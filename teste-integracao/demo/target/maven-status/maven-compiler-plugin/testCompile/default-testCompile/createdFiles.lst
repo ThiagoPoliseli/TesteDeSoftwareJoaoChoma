@@ -1,0 +1,9 @@
+com\teste\spring\teste\DemoApplicationTests.class
+com\teste\spring\teste\ClienteServiceTest.class
+com\example\demo\DemoApplicationTests.class
+com\teste\spring\teste\ClienteIntegrationTest.class
+com\example\demo\PessoaControllerTest.class
+com\teste\spring\teste\ClienteRepositoryTest.class
+com\teste\spring\teste\ClienteControllerTest.class
+com\example\demo\PessoaServiceTest.class
+com\example\demo\PessoaRepositoryTest.class

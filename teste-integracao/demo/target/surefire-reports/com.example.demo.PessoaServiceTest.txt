@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Test set: com.example.demo.PessoaServiceTest
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.190 s <<< FAILURE! -- in com.example.demo.PessoaServiceTest
+com.example.demo.PessoaServiceTest.salvar_deveSalvarPessoaComMultiplosTrabalhos -- Time elapsed: 0.011 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected size: 3 but was: 0 in:
+[]
+	at com.example.demo.PessoaServiceTest.salvar_deveSalvarPessoaComMultiplosTrabalhos(PessoaServiceTest.java:294)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.example.demo.PessoaServiceTest.atualizar_deveAtualizarPessoaComSucesso -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.UnsupportedOperationException
+	at java.base/java.util.AbstractList.remove(AbstractList.java:167)
+	at java.base/java.util.AbstractList$Itr.remove(AbstractList.java:387)
+	at java.base/java.util.AbstractList.removeRange(AbstractList.java:598)
+	at java.base/java.util.AbstractList.clear(AbstractList.java:243)
+	at com.example.demo.service.PessoaService.atualizar(PessoaService.java:61)
+	at com.example.demo.PessoaServiceTest.atualizar_deveAtualizarPessoaComSucesso(PessoaServiceTest.java:193)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

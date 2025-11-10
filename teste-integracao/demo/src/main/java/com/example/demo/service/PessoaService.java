@@ -23,14 +23,17 @@ public class PessoaService {
         pessoa.setNome(dto.getNome());
         pessoa.setCpf(dto.getCpf());
 
-        List<Trabalho> trabalhos = dto.getTrabalhos().stream().map(t -> {
-            Trabalho trabalho = new Trabalho();
-            trabalho.setDescricao(t.getDescricao());
-            trabalho.setPessoa(pessoa);
-            return trabalho;
-        }).collect(Collectors.toList());
-
-        pessoa.setTrabalhos(trabalhos);
+        if (dto.getTrabalhos() != null && !dto.getTrabalhos().isEmpty()) {
+            List<Trabalho> trabalhos = dto.getTrabalhos().stream().map(t -> {
+                Trabalho trabalho = new Trabalho();
+                trabalho.setDescricao(t.getDescricao());
+                trabalho.setPessoa(pessoa);
+                return trabalho;
+            }).collect(Collectors.toList());
+            pessoa.setTrabalhos(trabalhos);
+        } else {
+            pessoa.setTrabalhos(new java.util.ArrayList<>());
+        }
         return toDTO(pessoaRepository.save(pessoa));
     }
 
@@ -53,10 +56,12 @@ public class PessoaService {
         pessoa.setNome(dto.getNome());
         pessoa.setCpf(dto.getCpf());
 
-        // Limpa a lista de trabalhos existente
-        pessoa.getTrabalhos().clear();
+        if (pessoa.getTrabalhos() != null) {
+            pessoa.getTrabalhos().clear();
+        } else {
+            pessoa.setTrabalhos(new java.util.ArrayList<>());
+        }
 
-        // Adiciona os novos trabalhos
         List<Trabalho> trabalhos = dto.getTrabalhos().stream().map(t -> {
             Trabalho trabalho = new Trabalho();
             trabalho.setDescricao(t.getDescricao());
@@ -78,14 +83,18 @@ public class PessoaService {
         dto.setId(pessoa.getId());
         dto.setNome(pessoa.getNome());
         dto.setCpf(pessoa.getCpf());
-        dto.setTrabalhos(pessoa.getTrabalhos().stream()
-                .map(t -> {
-                    TrabalhoDTO tDTO = new TrabalhoDTO();
-                    tDTO.setId(t.getId());
-                    tDTO.setDescricao(t.getDescricao());
-                    return tDTO;
-                })
-                .collect(Collectors.toList()));
+        if (pessoa.getTrabalhos() != null) {
+            dto.setTrabalhos(pessoa.getTrabalhos().stream()
+                    .map(t -> {
+                        TrabalhoDTO tDTO = new TrabalhoDTO();
+                        tDTO.setId(t.getId());
+                        tDTO.setDescricao(t.getDescricao());
+                        return tDTO;
+                    })
+                    .collect(Collectors.toList()));
+        } else {
+            dto.setTrabalhos(java.util.Collections.emptyList());
+        }
         return dto;
     }
 }
